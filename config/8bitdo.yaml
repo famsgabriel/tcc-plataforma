@@ -1,0 +1,33 @@
+# 8bitdo ultimate 2c
+dispositivo:
+  nome: "8BitDo Ultimate 2C"
+  vendor: 0x2dc8
+  product: 0x310a
+
+# camada 1: eixo do dispositivo -> grandeza física
+eixos:
+  angulo_volante_graus:
+    codigo: ABS_X
+    min: -32768
+    max: 32767
+    zona_morta: 0.02        # fração do curso a partir do repouso
+    saida: [-450.0, 450.0]  # volante virtual de 900° 
+    repouso: centro         # zona morta
+  pedal_acelerador:
+    codigo: ABS_RZ          # gatilho direito
+    min: 0
+    max: 255
+    zona_morta: 0.02
+    saida: [0.0, 1.0]
+    repouso: minimo
+  pedal_freio:
+    codigo: ABS_Z           # gatilho esquerdo
+    min: 0
+    max: 255
+    zona_morta: 0.02
+    saida: [0.0, 1.0]
+    repouso: minimo
+
+# camada 2: grandeza física -> comando do veículo
+veiculo:
+  angulo_volante_max_graus: 450.0  # steer +-1
